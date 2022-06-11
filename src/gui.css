@@ -1,0 +1,186 @@
+
+@import url(../lib/gui.css);
+
+
+.Main {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "title title" "description board";
+    grid-template-rows: 20% 80%;
+}
+
+.Title {
+    grid-area: title;
+    font-size: 2em;
+}
+
+.Description {
+    grid-area: description;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: #B3D0EE;
+    border-radius: .4em;
+    display: inline-block;
+    padding: 10px;
+    color: #000;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.Description::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+        border-top-color: transparent;
+        border-top-style: solid;
+        border-top-width: 20px;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        border-left-style: solid;
+        border-left-width: 20px;
+    border-right-color: #B3D0EE;
+    border-left: 0;
+    margin-left: -10px;
+    margin-bottom: -20px;
+    border-top: 0;
+}
+.Description .Title {
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.Description .Text {
+    display: block;
+}
+.Description .Button {
+    position: absolute;
+    bottom: 1%;
+    font-size: 2em;
+    cursor: pointer;
+    transition: scale 0.5s;
+}
+.Description .Button:hover {
+    scale: 1.2;
+}
+.Description .Button.Button.Next {
+    right: 2%;
+}
+.Description .Button.Next::after {
+    content: "\25B6";
+}
+.Description .Button.Prev {
+    left: 2%;
+}
+.Description .Button.Prev::after {
+    
+    content: "\25C0";
+}
+
+.Board {
+    grid-area: board;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: flex-start;
+}
+
+.Box {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: flex-start;
+    border: 2px solid #000;
+}
+
+.Cell {
+    position: relative;
+
+    border: 1px solid #000;
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Cell.FocusGreen {
+    background-color: lightgreen;
+}
+.Cell.FocusBlue {
+    background-color: lightblue;
+}
+.Cell.FocusRed {
+    background-color: lightcoral;
+}
+.Cell.FocusPink {
+    background-color: wheat;
+}
+
+.Digit {
+    font-size: 2em;
+}
+.Digit.New {
+    color: mediumblue;
+}
+
+.Mark {
+    position: absolute;
+    font-size: 1em;
+}
+.Mark.New {
+    color: mediumblue;
+}
+.Mark.Crossed::before {
+    content: "X";
+    position: absolute;
+    color: red;
+}
+
+.Mark.Mark1 {
+    left: 2px;
+    top: 0px;
+}
+.Mark.Mark2 {
+    top: 0px;
+}
+.Mark.Mark3 {
+    right: 2px;
+    top: 0px;
+}
+.Mark.Mark4 {
+    left: 2px;
+}
+.Mark.Mark6 {
+    right: 2px;
+}
+.Mark.Mark7 {
+    left: 2px;
+    bottom: -2px;
+}
+.Mark.Mark8 {
+    bottom: -2px;
+}
+.Mark.Mark9 {
+    right: 2px;
+    bottom: -2px;
+}
+
+.Cell.RowArrow,
+.Cell.Cell.ColArrow {
+    content: "➜";
+    position: absolute;
+    font-size: 2em;
+    color: red;
+}
+.Cell.RowArrow::before {
+    left: -40px;   
+}
+.Cell.ColArrow::before {
+    top: -44px;
+    rotate: 90deg;
+}
