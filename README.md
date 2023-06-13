@@ -1,4 +1,4 @@
-# Show Your Sudoku Skills (SYSS)
+# Show Your Sudoku Skills (SUSS)
 
 Editor and viewer for visualization of step-by-step explanations of Sudoku solutions and their solving techniques.
 
