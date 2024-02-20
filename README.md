@@ -1,4 +1,4 @@
-# Show Your Sudoku Solving Skills
+# Show _Your_ Sudoku Solving Skills
 
 Editor and viewer for visualization of step-by-step explanations of Sudoku solutions and their solving techniques.
 
